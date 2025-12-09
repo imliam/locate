@@ -71,15 +71,7 @@ A browser extension that replaces the native CMD+F/CTRL+F with an advanced searc
    └── (other necessary files)
    ```
 
-### Publishing to Chrome Web Store
-
-1. Go to the [Chrome Developer Dashboard](https://chrome.google.com/webstore/devconsole)
-
-2. Pay the one-time $5 developer registration fee (if not already)
-
-3. Click **New Item** and upload your ZIP file
-
-4. Submit for review
+4. Publish it on the [Chrome Developer Dashboard](https://chrome.google.com/webstore/devconsole)
 
 ### Local Distribution (CRX)
 
