@@ -1,0 +1,66 @@
+{
+  "manifest_version": 3,
+  "name": "Locate",
+  "version": "1.0.0",
+  "description": "A browser extension that replaces the native CMD+F/CTRL+F with an advanced search, bringing, regex, CSS selectors, XPath, text replacements and more powerful features",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://api.openai.com/*",
+    "https://api.anthropic.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "src/vendor/prism.js",
+        "src/vendor/prism-json.js",
+        "src/vendor/marked.min.js",
+        "src/shared/storage.js",
+        "src/content/search-engine.js",
+        "src/content/highlighter.js",
+        "src/content/replacer.js",
+        "src/content/vardumper.js",
+        "src/content/ai-panel.js",
+        "src/content/overlay.js",
+        "src/content/main.js"
+      ],
+      "css": ["src/vendor/prism-theme.css", "src/content/styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F"
+      },
+      "description": "Open Locate search overlay"
+    }
+  },
+  "options_page": "src/options/index.html",
+  "action": {
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "32": "assets/icons/icon32.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    },
+    "default_title": "Locate - Advanced Search"
+  }
+}
