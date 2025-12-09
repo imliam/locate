@@ -2,7 +2,7 @@
 
 A browser extension that replaces the native CMD+F/CTRL+F with an advanced search, bringing, regex, CSS selectors, XPath, text replacements and more powerful features.
 
-![Locate Extension](assets/icons/icon128.png)
+![Locate Extension](assets/browser-search-for-developers.png)
 
 ## Features
 
